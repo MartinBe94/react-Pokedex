@@ -46,17 +46,19 @@ function App() {
         </input>
       </form>
       {pokemonData.map((data) =>{
-        return(
+        return <div key={data.id}>
           <div>
             <img src={data.sprites["front_default"]}></img>
+            <h2>{data.name}</h2>
             <ul>
-              <li>Name: {data.name}</li>
+            <li>Pokemon ID: {data.id}</li>
               <li>Type: {pokemonType}</li>
               <li>Height: {data.height} Dm</li>
               <li>Weight: {data.weight} Hg</li>
             </ul>
             </div>
-        );
+            </div>
+        
       })}
     </div>
   )
