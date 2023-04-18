@@ -9,9 +9,12 @@ function App() {
 
   const getPokemon = async()=>{
     const toArray =[];
+    const APIURL = import.meta.env.VITE_APIURL;
+    console.log(APIURL);
 
     try{
-      const url =`https://pokeapi.co/api/v2/pokemon/${pokemon}`;
+      const url = APIURL + pokemon;
+      // const url =` https://pokeapi.co/api/v2/pokemon/${pokemon}`;
       const response = await fetch(url);
       const result = await response.json();
       console.log(result);
